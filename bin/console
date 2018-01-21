@@ -1,0 +1,23 @@
+#!/usr/local/bin/php
+<?php
+    use App\Command\HasanCommand;
+    use App\Command\TestCommand;
+    use Eskirex\Component\Console\Ansi\Formatters\Text;
+    use Eskirex\Component\Console\Commands\HelpCommand;
+    use Eskirex\Component\Console\Commands\ListCommand;
+    use Eskirex\Component\Console\Commands\InfoCommand;
+    use Eskirex\Component\Console\Console;
+    use Eskirex\Component\Console\Output;
+    use Eskirex\Component\Console\Input;
+
+    set_time_limit(0);
+    ini_set('default_charset', 'utf-8');
+    ini_set('mbstring.internal_encoding', 'UTF-8');
+    require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Kernel.php';
+
+    $console = new Console('Eskirex WEB CLI','v1.0.0','tr');
+
+    $console
+        ->addCommand(new InfoCommand())
+        ->addCommand(new \Eskirex\Component\Web\Console\Commands\Asset\BuildAsset())
+        ->run(new Input(), new Output());

@@ -1,0 +1,7 @@
+RewriteCond %{REQUEST_FILENAME} !-f
+Deny from all
+
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|pdf|txt|bmp|woff2|ttf)$">
+    Order Deny,Allow
+   Allow from all
+</FilesMatch>
