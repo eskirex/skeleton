@@ -11,7 +11,7 @@ return [
         'database' => 'accounts',
         'server'   => 'localhost',
         'username' => 'root',
-        'password' => 'Pr0f3ss10n4l.',
+        'password' => '',
         'charset'  => 'utf8',
     ]
 ];
